@@ -1,10 +1,10 @@
 const express = require('express')
-const breads = express.Router()
-const Bread = require('../models/bread.js')
+const poke = express.Router()
+const pokeModel = require('../models/pokeModel.js')
 
 // INDEX
-breads.get('/', (req, res) => {
-  res.send(Bread)
+poke.get('/', (req, res) => {
+  res.send(pokeModel)
 })
 
-module.exports = breads
+module.exports = poke
