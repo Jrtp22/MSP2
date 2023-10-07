@@ -61,3 +61,22 @@ footer p {
     margin: 0;
     font-size: 14px;
 }
+
+.pokemon-card {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .pokemon-card img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .pokemon-card span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  

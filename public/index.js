@@ -52,9 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Add this code after the previous JavaScript code
 document.addEventListener('DOMContentLoaded', function () {
-    // ...
 
     const pokemonList = document.querySelector('.pokemon-list');
     const loadMoreButton = document.getElementById('load-more');
@@ -100,6 +98,57 @@ document.addEventListener('DOMContentLoaded', function () {
         pokemonList.appendChild(listItem);
     }
 
-    loadMorePokemon(); // Load the first batch of Pokémon on page load
+    loadMorePokemon(); 
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const pokemonList = document.querySelector('.pokemon-list');
+  
+    // Fetches data from poke api
+    function fetchPokemonData() {
+      const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=30'; // Adjust the limit as needed
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const pokemonArray = data.results;
+          pokemonArray.forEach(pokemon => {
+            fetchPokemonDetails(pokemon);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching Pokémon data:', error);
+        });
+    }
+  
+    // Fetches pokemon details and data
+    function fetchPokemonDetails(pokemon) {
+      fetch(pokemon.url)
+        .then(response => response.json())
+        .then(data => {
+          createPokemonCard(data);
+        })
+        .catch(error => {
+          console.error('Error fetching Pokémon details:', error);
+        });
+    }
+  
+    function createPokemonCard(pokemonData) {
+      const listItem = document.createElement('li');
+      listItem.classList.add('pokemon-card');
+  
+      const nameElement = document.createElement('span');
+      nameElement.textContent = pokemonData.name;
+  
+      const imageElement = document.createElement('img');
+      imageElement.src = pokemonData.sprites.front_default;
+      imageElement.alt = pokemonData.name;
+  
+      listItem.appendChild(nameElement);
+      listItem.appendChild(imageElement);
+  
+      pokemonList.appendChild(listItem);
+    }
+  
+    fetchPokemonData();
+  });
+  
