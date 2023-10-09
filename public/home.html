@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Pokédex</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search Pokémon...">
+            <button id="search-button">Search</button>
+        <div class="filter-container">
+        <label for="type-filter">Filter by Type:</label>
+        <select id="type-filter">
+            <option value="all">All</option>
+            <option value="grass">Grass</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+        </select>
+        </div>
+    </header>
+    <main>
+        <div class="pokemon-container">
+            <ul class="pokemon-list">
+            </ul>
+            <button id="load-more">Load More</button>
+        </div>
+        <section class="favorites">
+            <h2>Favorites</h2>
+            <ul class="favorites-list">  <!-- Favorite Pokemon added here  -->
+            </ul>
+        </section>
+        <ul class="pokemon-list"> <!-- Pokemon added here  -->
+        </ul>
+    </main>
+    <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2023 The Pokémon Company. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
