@@ -100,7 +100,10 @@ class PokeList extends Component {
         const { resources } = this.state;
 
         return (
-            <div>
+            <div><a href="/poke"><div>
+                    <button type="button" className="btn btn-primary">favorites list</button>
+                </div> </a>
+                
                 <div className="row">
                     <div className="col-12">
                         <h4>Pokemon API</h4>

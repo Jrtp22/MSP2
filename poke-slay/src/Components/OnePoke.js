@@ -1,7 +1,8 @@
 import React from 'react';
 import Pokemon from '.App.js';
+import PokeList from './PokeList';
 
-const App = () => {
+const OnePoke = () => {
   return (
     <div>
       <h1>Pokemon Information</h1>
@@ -10,4 +11,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default OnePoke;
